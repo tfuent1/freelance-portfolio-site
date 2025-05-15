@@ -8,6 +8,7 @@ import refactorServiceBg from './assets/refactor-service-bg.jpg';
 import uiuxServiceBg from './assets/uiux-service-bg.jpg';
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -95,7 +96,7 @@ export default function App() {
   
       {/* Site container */}
       <div className="font-sans text-gray-500 dark:text-gray-100 transition-colors duration-300">
-        {/* 🌄 Hero section with full-width background */}
+        {/* Hero section with full-width background */}
         <section className="relative w-full isolate">
           <div
             className="absolute inset-0 w-full h-full -z-10 bg-cover bg-center opacity-1000 dark:opacity-60"
@@ -132,22 +133,20 @@ export default function App() {
           <h2 className="text-3xl font-bold mb-6">Services Offered</h2>
 
           <div className="relative">
-            {/* 👈 Left Arrow */}
+            {/* Left Arrow */}
             <button
               onClick={() => slider.current?.prev()}
-              className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-200 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:scale-105 transition"
+              className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:scale-105 transition"
             >
-              ◀
+              <ChevronLeft className="w-5 h-5" />
             </button>
 
-            {/* 👉 Right Arrow */}
             <button
               onClick={() => slider.current?.next()}
-              className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-200 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:scale-105 transition"
+              className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:scale-105 transition"
             >
-              ▶
+              <ChevronRight className="w-5 h-5" />
             </button>
-
             {/* 🎠 Carousel */}
             <div ref={sliderRef} className="keen-slider overflow-hidden touch-pan-x overscroll-contain">
               {[
